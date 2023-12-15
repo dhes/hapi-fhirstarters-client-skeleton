@@ -1,0 +1,18 @@
+{
+  "resourceType": "Patient",
+  "id": "example",
+  "meta": {
+    "versionId": "285",
+    "lastUpdated": "2023-09-27T10:28:57.056+00:00",
+    "source": "#1sAb0R9DAuvSnpjR"
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">Homer <b>SIMPSON </b></div><table class=\"hapiPropertyTable\"><tbody/></table></div>"
+  },
+  "name": [ {
+    "family": "Simpson",
+    "given": [ "Homer" ]
+  } ],
+  "gender": "male"
+}

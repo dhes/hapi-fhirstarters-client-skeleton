@@ -1,0 +1,113 @@
+{
+  "resourceType": "Patient",
+  "id": "heslinga-dan",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
+      "valueCode": "M"
+    },
+    {
+      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+      "extension": [
+        {
+          "url": "text",
+          "valueString": "European"
+        },
+        {
+          "url": "ombCategory",
+          "valueCoding": {
+            "code": "2106-3",
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "display": "White"
+          }
+        },
+        {
+          "url": "detailed",
+          "valueCoding": {
+            "code": "2108-9",
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "display": "European"
+          }
+        }
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+      "extension": [
+        {
+          "url": "text",
+          "valueString": "Not Hispanic or Latino"
+        },
+        {
+          "url": "ombCategory",
+          "valueCoding": {
+            "code": "2186-5",
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "display": "Not Hispanic or Latino"
+          }
+        }
+      ]
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "given": [
+        "Dan"
+      ],
+      "family": "Heslinga",
+      "period": {
+        "start": "1977-07-01"
+      }
+    },
+    {
+      "use": "old",
+      "given": [
+        "Dan D."
+      ],
+      "family": "Hesling",
+      "period": {
+        "start": "1953-06-05",
+        "end": "1977-06-30"
+      }
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1953-06-05",
+  "identifier": [
+    {
+      "system": "https://app.elationemr.com",
+      "value": "16201950429185"
+    }
+  ],
+  "address": [
+    {
+      "use": "home",
+      "line": [
+        "2386 Liloa Rise"
+      ],
+      "city": "Honolulu",
+      "state": "HI",
+      "postalCode": "96822-1953",
+      "country": "USA"
+    }
+  ],
+  "telecom": [
+    {
+      "use": "mobile",
+      "system": "phone",
+      "value": "808-729-1796"
+    },
+    {
+      "use": "home",
+      "system": "email",
+      "value": "dan@heslinga.us"
+    }
+  ],
+  "deceasedBoolean": false
+}
