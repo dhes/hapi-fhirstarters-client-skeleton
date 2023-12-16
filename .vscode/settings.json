@@ -4,5 +4,8 @@
 	"editor.formatOnType": true,
 	"[lisp]": {
 		"editor.wordSeparators": "`|;:'\",()"
-	}
+	},
+	"cSpell.words": [
+		"Colorectal"
+	]
 }
