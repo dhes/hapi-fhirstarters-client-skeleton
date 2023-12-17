@@ -63,10 +63,13 @@ define "SDE Sex":
   SDE."SDE Sex"
 
 define "Initial Population":
-  AgeInYearsAt(date from start of "Measurement Period")in Interval[50, 75 )
-            and exists ( AdultOutpatientEncounters."Qualifying Encounters"
-                union "Telehealth Services"
-            )
+// The Quality Measure version
+  // AgeInYearsAt(date from start of "Measurement Period")in Interval[50, 75 )
+  //           and exists ( AdultOutpatientEncounters."Qualifying Encounters"
+  //               union "Telehealth Services"
+  //           )
+// The Clinical Reasoning version
+AgeInYears() in Interval[50, 75)
 
 define "Telehealth Services":
   ( [Encounter: "Online Assessments"]

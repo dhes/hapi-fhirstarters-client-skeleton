@@ -11,7 +11,7 @@ import org.hl7.fhir.r4.model.Library;
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.rest.client.api.IGenericClient;
 
-public class fhirBase64BinaryConversion {
+public class writeFirstLibraryAttachmentDataToFile {
 
 	public static void main(String[] args) throws IOException {
 		FhirContext ctx = FhirContext.forR4();
@@ -30,6 +30,7 @@ public class fhirBase64BinaryConversion {
 			// Convert byte array to String if needed (e.g., for modification)
 			// String plainText = new String(base64BinaryData, StandardCharsets.UTF_8);
 			Path outPath = Path.of("./assets/decodedCql.cql");
+			// it appears the Files.write implicitly converts base64Binary bytes
 			Files.write(outPath, base64BinaryData);
 			System.out.println("Success");
 		} else {
