@@ -32,7 +32,7 @@ public class importModifiedColonCancerScreeningCqlToLibrary {
 				.execute();
 
 		// Step 2: Read the modified CQL content from the file
-		Path cqlFilePath = Paths.get("./assets/decodedCql.cql");
+		Path cqlFilePath = Paths.get("./assets/ColorectalCancerScreeningsFHIR.cql");
 		try {
 			// String modifiedCqlContent = Files.readString(cqlFilePath);
 			byte[] fileContent = Files.readAllBytes(cqlFilePath); // Reads entire file content as bytes
