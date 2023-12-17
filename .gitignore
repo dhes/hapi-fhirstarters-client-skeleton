@@ -4,4 +4,4 @@ target/
 bin/
 *.iml
 .settings/
-.DS_STORE
+*.DS_Store

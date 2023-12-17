@@ -11,7 +11,7 @@ import org.hl7.fhir.r4.model.Library;
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.rest.client.api.IGenericClient;
 
-public class writeFirstLibraryAttachmentDataToFile {
+public class extractLibraryLogic {
 
 	public static void main(String[] args) throws IOException {
 		FhirContext ctx = FhirContext.forR4();
@@ -20,15 +20,20 @@ public class writeFirstLibraryAttachmentDataToFile {
 		Library library = fhirClient.read()
 				.resource(Library.class)
 				.withId("ColorectalCancerScreeningsFHIR")
+				// .withId("MATGlobalCommonFunctionsFHIR4")
+				// .withId("CumulativeMedicationDurationFHIR4")
+				// .withId("HospiceFHIR4")
+				// .withId("FHIRHelpers")
+				// .withId("PalliativeCareFHIR")
+				// .withId("SupplementalDataElementsFHIR4")
+				// .withId("AdvancedIllnessandFrailtyExclusionECQMFHIR4")
+				// .withId("AdultOutpatientEncountersFHIR4")
 				.execute();
 		// Step 2: Access the Content Element
 		List<Attachment> attachments = library.getContent();
 		if (!attachments.isEmpty()) {
 			Attachment firstAttachment = attachments.get(0);
 			byte[] base64BinaryData = firstAttachment.getData(); // Get byte array directly
-			// System.out.println(base64BinaryData);
-			// Convert byte array to String if needed (e.g., for modification)
-			// String plainText = new String(base64BinaryData, StandardCharsets.UTF_8);
 			Path outPath = Path.of("./assets/decodedCql.cql");
 			// it appears the Files.write implicitly converts base64Binary bytes
 			Files.write(outPath, base64BinaryData);
