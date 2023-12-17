@@ -5,7 +5,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Base64;
+import java.util.List;
+
+// import javax.swing.text.AbstractDocument.Content;
+
 import org.hl7.fhir.r4.model.Attachment;
 import org.hl7.fhir.r4.model.Library;
 
@@ -42,7 +47,13 @@ public class importModifiedColonCancerScreeningCqlToLibrary {
 					.setData(fileContent);
 
 			// Assuming there is only one attachment in the content list
-			library.getContent().get(0).setData(updatedAttachment.getData());
+			// library.getContent().get(0).setData(updatedAttachment.getData());
+			// clear the content and add only the new text/cql attachment
+			// List<Content> content = new ArrayList<>();
+			// content.add(new Content().setContent(yourApplicationObject)); // Set your
+			// Application object as the content
+			library.setContent(new ArrayList<>());
+			library.addContent(updatedAttachment);
 
 			// Step 5: Update the FHIR Library Resource on the Server
 			MethodOutcome outcome = fhirClient.update()
